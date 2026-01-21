@@ -14,7 +14,12 @@ import UserContext from './UserContext';
 
 function App() {
   const [count, setCount] = useState(0)
-  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+  const userData = {
+    name: "Jane Doe", 
+    email: "jane.doe@example.com",
+    age: 25,
+    bio: "Loves hiking and photography"
+  };
 
 
   return (
@@ -22,34 +27,20 @@ function App() {
       <UserContext.Provider value={userData}>
         <div>
           <WelcomeMessage />
-          <ProfilePage />
-
           <UserProfile />
+          <ProfilePage />
           <Header />
           <MainContent />
           <Footer />
-          <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
         </div>
       </UserContext.Provider>
-      <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount(count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
 export default App

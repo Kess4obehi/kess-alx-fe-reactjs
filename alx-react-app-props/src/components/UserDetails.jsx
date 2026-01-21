@@ -3,7 +3,9 @@ import UserContext from '../UserContext';
 
 function UserDetails() {
   const userData = useContext(UserContext);
-  
+
+  if (!userData) return null;
+
   return (
     <div>
       <p>Name: {userData.name}</p>
