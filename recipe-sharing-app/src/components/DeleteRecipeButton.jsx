@@ -6,7 +6,7 @@ const DeleteRecipeButton = ({ recipeId }) => {
   const navigate = useNavigate();
 
   const handleDelete = () => {
-    const confirmDelete = confirm('Are you sure you want to delete this recipe?');
+    const confirmDelete = window.confirm('Are you sure you want to delete this recipe?');
     if (confirmDelete) {
       deleteRecipe(recipeId);
       navigate('/');
@@ -14,9 +14,10 @@ const DeleteRecipeButton = ({ recipeId }) => {
   };
 
   return (
-    <button onClick={() => deleteRecipe(recipeId)}>
+    <button onClick={handleDelete}>
       Delete
     </button>
+
   );
 };
 
